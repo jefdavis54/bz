@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Eye Glasses, Sunglasses, Designer Frames, Designer Eyewear | Block &
-      Zuckerman Opticians
+      Eye Glasses, Sunglasses, Designer Frames, Designer Eyewear | Block & Zuckerman Opticians
     </title>
     <link
-      href="https://fonts.googleapis.com/css?family=Frank+Rhul+Libre:300,400|Zilla+Slab:300,400|EB+Garamond:400,500,600|Playfair+Display:400|Slabo+27px:400|Source+Sans+Pro:200,300,400&display=swap"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:400|Slabo+27px:400|Source+Sans+Pro:200,300,400&display=swap"
       rel="stylesheet"
     />
     <link href="index.css" rel="stylesheet" />
@@ -19,11 +18,13 @@
       <h1>Block <span class="altFont">&</span> Zuckerman Opticians</h1>
       <nav>
         <ul>
-          <li class="is-active"><a class="is-active" href="#home">Home</a></li>
-          <li><a href="#brands">Brands</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#store">Store</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li id="liNav_home" class="active">
+            <a id="aNav_home" class="active" href="#home">Home</a>
+          </li>
+          <li id="liNav_brands"><a id="aNav_brands" href="#brands">Brands</a></li>
+          <li id="liNav_about"><a id="aNav_about" href="#about">About</a></li>
+          <li id="liNav_store"><a id="aNav_store" href="#store">Store</a></li>
+          <li id="liNav_contact"><a id="aNav_contact" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -68,10 +69,7 @@
             <p>* Certain Restrictions Apply</p>
           </div>
           <div class="notice2">
-            <h3>
-              Choose us as the<br />#1 Opticians in<br />Essex County<br />for
-              2019.
-            </h3>
+            <h3>Choose us as the<br />#1 Opticians in<br />Essex County<br />for 2019.</h3>
             <a href="http://www.voteblockandzuckerman.com/">Vote Now</a>
           </div>
           <div class="notice3">
@@ -111,11 +109,10 @@
       <section id="about">
         <div class="testimonial">
           <h4>
-            Block <span class="altFont">&</span> Zuckerman Opticians has served
-            the community for over 65 years. We strive for excellence in all
-            that we do – from edging the highest in lens technology to selecting
-            the finest frames for each individual's face. We look forward to
-            seeing you!
+            Block <span class="altFont">&</span> Zuckerman Opticians has served the community for
+            over 65 years. We strive for excellence in all that we do – from edging the highest in
+            lens technology to selecting the finest frames for each individual's face. We look
+            forward to seeing you!
           </h4>
         </div>
         <div class="mailinglist">
@@ -123,27 +120,18 @@
           <form class="frmSubscribe" action="">
             <div class="frmSubscribe_inpBlk">
               <label for="frmSubscribe_name">Full Name</label>
-              <input
-                id="frmSubscribe_name"
-                name="frmSubscribe_name"
-                type="text"
-              />
+              <input id="frmSubscribe_name" name="frmSubscribe_name" type="text" />
             </div>
             <div class="frmSubscribe_inpBlk">
               <label for="frmSubscribe_email">Email</label>
-              <input
-                id="frmSubscribe_email"
-                name="frmSubscribe_email"
-                type="text"
-              />
+              <input id="frmSubscribe_email" name="frmSubscribe_email" type="text" />
             </div>
             <div>
               <button type="submit" class="frmSubscribe_btn">Subscribe</button>
             </div>
           </form>
           <p>
-            Don't like spam? We don't either! We will only send you an email
-            once a month.
+            Don't like spam? We don't either! We will only send you an email once a month.
           </p>
         </div>
       </section>
@@ -204,9 +192,7 @@
               <a href="https://www.instagram.com/bzopticians/"
                 ><img src="images/instagram-lav26x26.jpg"
               /></a>
-              <a href="mailto:info@bzopticians.com"
-                ><img src="images/email-lav26x26.png"
-              /></a>
+              <a href="mailto:info@bzopticians.com"><img src="images/email-lav26x26.png"/></a>
             </div>
           </div>
           <form class="frmContact" action="">
@@ -215,12 +201,7 @@
             <label for="frmContact_email">Email</label>
             <input id="frmContact_email" name="frmContact_email" type="text" />
             <label for="frmContact_msg">Your Message</label>
-            <textarea
-              name="frmContact_msg"
-              id="frmContact_msg"
-              cols="30"
-              rows="5"
-            ></textarea>
+            <textarea name="frmContact_msg" id="frmContact_msg" cols="30" rows="5"></textarea>
             <div class="align_checkbox">
               <input
                 type="checkbox"
@@ -229,8 +210,8 @@
                 checked
               />
               <label for="frmContact_emaillist"
-                >Keep in touch! Send me emails featuring special offers and the
-                latest news. You may unsubscribe at any time.</label
+                >Keep in touch! Send me emails featuring special offers and the latest news. You may
+                unsubscribe at any time.</label
               >
             </div>
             <div>

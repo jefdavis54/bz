@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -96,6 +97,7 @@ header li {
   padding-bottom: 2.2rem;
   padding-top: 2.2rem;
   border-bottom: 0.2rem solid transparent;
+  transition: all 0.3s ease-in;
 }
 header li a {
   color: #2c2c2c;
@@ -103,11 +105,12 @@ header li a {
   letter-spacing: 0.3rem;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 0.3s ease-in;
 }
-header a.is-active {
+header a.active {
   color: #a6a3b4;
 }
-header li.is-active {
+header li.active {
   border-bottom: 0.2rem solid #a6a3b4;
 }
 
@@ -212,8 +215,7 @@ header li.is-active {
   margin-bottom: 1.5rem;
 }
 #brands .logos {
-  margin-top: 6.5rem;
-  margin-bottom: 10rem;
+  padding: 6.5rem 0 10rem 0;
 }
 #brands p {
   font-size: 1.1rem;
