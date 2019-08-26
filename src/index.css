@@ -99,15 +99,8 @@ header h1 {
   font-size: 2.4rem;
   letter-spacing: 0.11rem;
 }
-header nav {
-  margin: 0 auto;
-}
-header ul {
-  justify-content: center;
-}
 header li {
   list-style-type: none;
-  width: 70px;
   text-align: center;
   padding-bottom: 2.2rem;
   padding-top: 2.2rem;
@@ -173,8 +166,7 @@ header li.active {
 #home img {
   grid-area: home;
   z-index: 10;
-  height: 100%;
-  object-fit: contain;
+  width: 100%;
 }
 #home .content {
   margin: 2rem auto;
@@ -250,7 +242,7 @@ header li.active {
 #brands .logos img {
   object-fit: cover;
   flex-grow: 1;
-  width: 115px;
+  width: 100px;
 }
 #brands .logos .border {
   border-bottom: 1px solid #e6e6e6;
@@ -275,24 +267,19 @@ header li.active {
   object-fit: fill;
 }
 #about .aboutText h4 {
-  background: #ffffff;
   grid-area: one;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-  height: 100%;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1rem;
 }
 #about .mailinglist {
   background: #2c2c2c;
   margin: 0 auto;
-  padding: 6rem 0 6rem 0;
+  padding: 6rem 2rem;
   text-align: center;
 }
 #about .mailinglist h3 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: #ffffff;
 }
 #about .mailinglist p {
@@ -322,6 +309,8 @@ header li.active {
   width: 30rem;
   height: 5rem;
   margin: 0 2rem 0 0;
+  flex-basis: 100%;
+  min-width: 0;
 }
 #about .mailinglist .frmSubscribe label {
   font-size: 1.4rem;
@@ -331,7 +320,6 @@ header li.active {
   letter-spacing: 1.5px;
 }
 #store {
-  overflow: hidden;
   display: grid;
 }
 #store img {
@@ -342,7 +330,7 @@ header li.active {
 #contact .location {
   max-width: 550px;
   flex-grow: 1;
-  padding: 3rem 5rem;
+  padding: 3rem 1rem;
   margin: 0 auto;
   justify-self: center;
   align-self: center;
@@ -402,8 +390,9 @@ header li.active {
   flex-direction: column;
   max-width: 550px;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 3rem 2rem;
   background: #e6e6e6;
+  box-sizing: content-box;
 }
 #contact label {
   text-transform: uppercase;
@@ -415,6 +404,10 @@ header li.active {
 }
 #contact input {
   height: 45px;
+  width: 90%;
+}
+#contact textarea {
+  width: 90%;
 }
 #contact button {
   padding: 0;
@@ -481,6 +474,13 @@ footer {
   display: none;
 }
 
+@media (min-width: 360px) {
+  #contact .location {
+    max-width: 550px;
+    flex-grow: 1;
+    padding: 3rem 1rem;
+  }
+}
 @media (min-width: 650px) {
   #home h2 {
     font-size: 4.8rem;
@@ -528,11 +528,12 @@ footer {
   #contact form {
     padding: 3rem 5rem;
   }
-}
-@media (min-width: 830px) {
-  #home img {
+  #contact input {
     width: 100%;
-    height: auto;
+  }
+  #contact textarea {
+    width: 100%;
+  }
 }
 @media (min-width: 860px) {
   header {
@@ -541,9 +542,6 @@ footer {
   header h1,
   #brands .logos .placeholder {
     display: block;
-  }
-  header nav {
-    margin: 0;
   }
   header li {
     width: 90px;
