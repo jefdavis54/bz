@@ -33,20 +33,19 @@ const imageArray = [
   { src: "images/hero-oliverpeoples.jpg", alt: "Oliver Peoples Slide" },
   { src: "images/hero-tomford.jpg", alt: "Tom Ford Slide" },
 ];
-let i = 0;
+let currentImage = 0;
 
-// Change Image
-function changeImg() {
-  document.slide.src = imageArray[i].src;
-  document.slide.alt = imageArray[i].alt;
+function slideShow() {
+  document.slide.src = imageArray[currentImage].src;
+  document.slide.alt = imageArray[currentImage].alt;
 
-  if (i < imageArray.length - 1) {
-    i += 1;
+  if (currentImage < imageArray.length - 1) {
+    currentImage += 1;
   } else {
-    i = 0;
+    currentImage = 0;
   }
 
-  setTimeout(changeImg, 5000);
+  setTimeout(slideShow, 5000);
 }
 
-window.onload = changeImg;
+window.onload = slideShow;

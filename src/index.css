@@ -312,6 +312,9 @@ header li.active {
 #about .mailinglist form > * {
   padding: 0 0 4rem 0;
 }
+#about .mailinglist .frmSubscribe input:invalid:not(:placeholder-shown) {
+  border-bottom: 2px solid #d7244c;
+}
 #about .mailinglist .frmSubscribe input {
   border: none;
   color: #ffffff;
