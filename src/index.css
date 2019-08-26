@@ -100,12 +100,15 @@ header h1 {
   font-size: 2.4rem;
   letter-spacing: 0.11rem;
 }
+header nav {
+  margin: 0 auto;
+}
 header ul {
   justify-content: center;
 }
 header li {
   list-style-type: none;
-  width: 90px;
+  width: 70px;
   text-align: center;
   padding-bottom: 2.2rem;
   padding-top: 2.2rem;
@@ -113,6 +116,7 @@ header li {
   transition: all 0.4s eas;
 }
 header li a {
+  width: 100%;
   color: #2c2c2c;
   font-size: 1.2rem;
   letter-spacing: 0.3rem;
@@ -233,7 +237,7 @@ header li.active {
 #brands .logos img {
   object-fit: cover;
   flex-grow: 1;
-  width: 200px;
+  width: 115px;
 }
 #brands .logos .border {
   border-bottom: 1px solid #e6e6e6;
@@ -263,24 +267,24 @@ header li.active {
 
 #about .aboutText {
   display: grid;
-  grid-template-columns: 50rem 50rem;
-  grid-template-rows: 30rem 30rem;
-  grid-template-areas:
-    "one two"
-    "three four";
-  background-image: url("images/blockzuckermanopticians2.jpg");
-  background-size: cover;
+  grid-template-columns: 1fr minmax(10rem, 20rem);
+  grid-template-areas: "one two";
+}
+#about .aboutText img {
+  grid-area: two;
+  width: 100%;
+  object-fit: fill;
 }
 #about .aboutText h4 {
   background: #ffffff;
-  grid-area: three;
-  font-size: 2.2rem;
-  letter-spacing: 2px;
+  grid-area: one;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
   align-self: center;
   justify-self: center;
   width: 100%;
   height: 100%;
-  padding: 3.5rem;
+  padding: 1rem 1.5rem;
 }
 #about .mailinglist {
   background: #2c2c2c;
@@ -469,15 +473,40 @@ footer {
 .placeholder {
   display: none;
 }
-@media (min-width: 1030px) {
+
+@media (min-width: 650px) {
+  #about .aboutText h4 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    padding: 3.5rem;
+  }
   #brands .logos img {
-    width: 240px;
+    width: 200px;
+  }
+  #about .aboutText {
+    display: grid;
+    grid-template-columns: 50rem 50rem;
+    grid-template-rows: 30rem 30rem;
+    grid-template-areas:
+      "two three"
+      "one four";
+    background-image: url("images/blockzuckermanopticians2.jpg");
+    background-size: cover;
+  }
+  #about .aboutText img {
+    display: none;
   }
 }
 @media (min-width: 860px) {
   header h1,
   #brands .logos .placeholder {
     display: block;
+  }
+  header nav {
+    margin: 0;
+  }
+  header li {
+    width: 90px;
   }
   #about .mailinglist form {
     flex-direction: row;
@@ -486,6 +515,11 @@ footer {
   }
   #about .mailinglist form > * {
     padding: 0;
+  }
+}
+@media (min-width: 1030px) {
+  #brands .logos img {
+    width: 240px;
   }
 }
 @media screen and (max-width: 1030px) and (min-width: 860px) {
