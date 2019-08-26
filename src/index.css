@@ -93,7 +93,6 @@ header {
   background: white;
   height: 6.4rem;
   width: 100%;
-  padding: 0 2rem;
 }
 header h1 {
   display: none;
@@ -174,7 +173,7 @@ header li.active {
 #home img {
   grid-area: home;
   z-index: 10;
-  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 #home .content {
@@ -530,7 +529,15 @@ footer {
     padding: 3rem 5rem;
   }
 }
+@media (min-width: 830px) {
+  #home img {
+    width: 100%;
+    height: auto;
+}
 @media (min-width: 860px) {
+  header {
+    padding: 0 2rem;
+  }
   header h1,
   #brands .logos .placeholder {
     display: block;
