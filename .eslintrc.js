@@ -21,5 +21,6 @@ module.exports = {
     "arrow-parens": ["off"],
     "operator-linebreak": ["error", "after"],
     "max-len": ["error", { code: 100, ignoreComments: true }],
+    "no-unused-vars": ["warn"],
   },
 };

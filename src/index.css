@@ -61,12 +61,26 @@ button {
 button:hover {
   background: #9c90a5;
 }
+a,
+button {
+  cursor: pointer;
+}
 #brands,
 #about,
 #store,
 #contact {
-  width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
+}
+#home:target::before,
+#brands:target::before,
+#about:target::before,
+#store:target::before,
+#contact:target::before {
+  content: "";
+  display: block;
+  height: 6.4rem; /* fixed header height - must match header height*/
+  margin-top: -6.4rem; /* negative fixed header height */
 }
 
 header {
@@ -75,19 +89,18 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   background: white;
   height: 6.4rem;
   width: 100%;
   padding: 0 2rem;
 }
 header h1 {
+  display: none;
   font-size: 2.4rem;
   letter-spacing: 0.11rem;
 }
 header ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
 }
 header li {
@@ -97,7 +110,7 @@ header li {
   padding-bottom: 2.2rem;
   padding-top: 2.2rem;
   border-bottom: 0.2rem solid transparent;
-  transition: all 0.3s ease-in;
+  transition: all 0.4s eas;
 }
 header li a {
   color: #2c2c2c;
@@ -105,35 +118,40 @@ header li a {
   letter-spacing: 0.3rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.3s ease-in;
+  transition: all 0.4s eas;
 }
+header a:hover,
 header a.active {
   color: #a6a3b4;
 }
 header li.active {
   border-bottom: 0.2rem solid #a6a3b4;
 }
-
 #home {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "home";
   padding-top: 6.4rem;
+  align-items: center;
+  text-align: center;
+  background: #000000;
 }
 #home h2 {
   color: white;
-  font-size: 5rem;
+  font-size: 4.8rem;
   letter-spacing: 4px;
-  margin-bottom: 4rem;
+  margin-bottom: 3.6rem;
 }
 #home h3 {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
 }
-#home button {
+#home a {
+  display: inline-block;
   color: white;
   font-size: 1.6rem;
   text-transform: uppercase;
@@ -144,48 +162,40 @@ header li.active {
   text-decoration: none;
   transition: all 0.4s;
 }
-#home button:hover {
+#home a:hover {
   background: #c6c4d1;
   border: 1px solid #c6c4d1;
   transform: translateY(-0.2rem);
 }
-#home .test {
+#home img {
   grid-area: home;
-  z-index: 1;
-}
-#home .test img {
+  z-index: 10;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 #home .content {
   margin: 0 auto;
-  width: 100%;
   grid-area: home;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: 20px auto 20px;
-  justify-content: space-around;
-  align-items: center;
-}
-#home .content .middle {
-  text-align: center;
-}
-#home .slideshow-images img {
-  display: none;
+  z-index: 100;
 }
 
 #brands {
   text-align: center;
+  padding-bottom: 6.4rem;
 }
-#brands h3 {
+#brands .subtitle {
   font-size: 3rem;
   letter-spacing: 2.5px;
+}
+#brands .title {
+  padding-bottom: 6.4rem;
 }
 #brands .notice1,
 #brands .notice2,
 #brands .notice3 {
   padding: 3rem 2rem 1rem 2rem;
   line-height: 1.1;
+  flex-grow: 1;
 }
 #brands .notice1,
 #brands .notice3 {
@@ -215,7 +225,26 @@ header li.active {
   margin-bottom: 1.5rem;
 }
 #brands .logos {
-  padding: 6.5rem 0 10rem 0;
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+}
+#brands .logos img {
+  object-fit: cover;
+  flex-grow: 1;
+  width: 200px;
+}
+#brands .logos .border {
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+#brands .logos h3 {
+  text-align: center;
+}
+
+#brands .logos img .blank {
+  border: none;
 }
 #brands p {
   font-size: 1.1rem;
@@ -232,7 +261,7 @@ header li.active {
   color: #a6a3b4;
 }
 
-#about .testimonial {
+#about .aboutText {
   display: grid;
   grid-template-columns: 50rem 50rem;
   grid-template-rows: 30rem 30rem;
@@ -241,9 +270,8 @@ header li.active {
     "three four";
   background-image: url("images/blockzuckermanopticians2.jpg");
   background-size: cover;
-  overflow: hidden;
 }
-#about .testimonial h4 {
+#about .aboutText h4 {
   background: #ffffff;
   grid-area: three;
   font-size: 2.2rem;
@@ -270,10 +298,14 @@ header li.active {
 }
 #about .mailinglist form {
   display: flex;
+  flex-direction: column;
   text-align: left;
   justify-content: center;
-  align-items: flex-end;
-  padding: 4rem 0 4rem 0;
+  align-items: center;
+  padding: 4rem 0 0 0;
+}
+#about .mailinglist form > * {
+  padding: 0 0 4rem 0;
 }
 #about .mailinglist .frmSubscribe input {
   border: none;
@@ -292,23 +324,17 @@ header li.active {
 }
 #store {
   overflow: hidden;
+  display: grid;
 }
 #store img {
+  max-width: 100%;
   object-fit: cover;
 }
-#contact form {
-  padding: 3rem 6rem;
-  background: #e6e6e6;
-}
-#contact label {
-  text-transform: uppercase;
-  color: #2c2c2c;
-  letter-spacing: 2px;
-  font-weight: 100;
-  font-size: 1.3rem;
-  padding: 2rem 0 0.8rem 0;
-}
+
 #contact .location {
+  max-width: 550px;
+  flex-grow: 1;
+  padding: 3rem 6rem;
   margin: 0 auto;
   justify-self: center;
   align-self: center;
@@ -360,10 +386,21 @@ header li.active {
 #contact .socialmedia a:last-child {
   margin: 0;
 }
-
 #contact form {
   display: flex;
   flex-direction: column;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 3rem 6rem;
+  background: #e6e6e6;
+}
+#contact label {
+  text-transform: uppercase;
+  color: #2c2c2c;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 1.3rem;
+  padding: 2rem 0 0.8rem 0;
 }
 #contact input {
   height: 45px;
@@ -382,27 +419,18 @@ header li.active {
   display: grid;
   grid-template-columns: 20px auto;
   align-items: center;
-  margin-bottom: 2rem;
+  padding: 0.5rem 0 5rem 0;
+  cursor: pointer;
+}
+#contact .align_checkbox input {
+  cursor: pointer;
 }
 #contact .align_checkbox label {
+  padding: 0 0 0 1rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
   text-transform: none;
-}
-
-.logos {
-  border-left: 1px solid #e6e6e6;
-  border-top: 1px solid #e6e6e6;
-  align-items: center;
-}
-.logos img {
-  width: 100%;
-  object-fit: cover;
-  border-right: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-}
-.logos h3 {
-  text-align: center;
+  cursor: pointer;
 }
 
 footer {
@@ -415,24 +443,54 @@ footer {
 .btn_visit {
   font-size: 1.6rem;
 }
+.flex-col {
+  display: flex;
+  flex-wrap: wrap;
+}
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.three-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
 }
 .four-col {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+.five-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.vmargin-small {
+  padding: 0 2rem;
+}
 .altFont {
-  font-family: "Slabo 27px=", serif;
+  font-family: "Slabo 27px", serif;
   font-weight: 400;
 }
-@media (min-width: 800px) {
-  .logos h3 {
-    grid-column: 2 / 5;
+.placeholder {
+  display: none;
+}
+@media (min-width: 1030px) {
+  #brands .logos img {
+    width: 240px;
+  }
+}
+@media (min-width: 860px) {
+  header h1,
+  #brands .logos .placeholder {
+    display: block;
+  }
+  #about .mailinglist form {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 4rem 0 4rem 0;
+  }
+  #about .mailinglist form > * {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1030px) and (min-width: 860px) {
+  #contact .location,
+  #contact form {
+    flex-basis: 400px;
   }
 }

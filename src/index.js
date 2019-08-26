@@ -1,6 +1,6 @@
 const sections = document.getElementsByTagName("section");
 
-// This should probably be throttled.
+// window.addEventListener("scroll"... should probably be throttled.
 // Especially because it triggers during smooth scrolling.
 // https://lodash.com/docs/4.17.10#throttle
 // You could do like...
@@ -10,7 +10,7 @@ const sections = document.getElementsByTagName("section");
 // Only not doing it here to keep this dependency-free.
 
 window.addEventListener("scroll", () => {
-  const fromTop = window.scrollY + 20;
+  const fromTop = window.scrollY + 66;
   // NOTE: This follows the original site's pattern of waiting until the section reaches the top to set the active NavBar state.
   Array.prototype.forEach.call(sections, section => {
     if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
@@ -22,3 +22,31 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+const imageArray = [
+  { src: "images/hero--sabinebe.jpg", alt: "sabine be Slide" },
+  { src: "images/hero-alainmikli.jpg", alt: "Alain Mikli Slide" },
+  { src: "images/hero-gucci.jpg", alt: "Gucci Slide" },
+  { src: "images/hero-igreenkids.jpg", alt: "iGreen Slide" },
+  { src: "images/hero-lafont.jpg", alt: "Lafont Slide" },
+  { src: "images/hero-menizzi.jpg", alt: "Menizzi Slide" },
+  { src: "images/hero-oliverpeoples.jpg", alt: "Oliver Peoples Slide" },
+  { src: "images/hero-tomford.jpg", alt: "Tom Ford Slide" },
+];
+let i = 0;
+
+// Change Image
+function changeImg() {
+  document.slide.src = imageArray[i].src;
+  document.slide.alt = imageArray[i].alt;
+
+  if (i < imageArray.length - 1) {
+    i += 1;
+  } else {
+    i = 0;
+  }
+
+  setTimeout(changeImg, 5000);
+}
+
+window.onload = changeImg;
