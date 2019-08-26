@@ -142,25 +142,25 @@ header li.active {
 }
 #home h2 {
   color: white;
-  font-size: 4.8rem;
-  letter-spacing: 4px;
-  margin-bottom: 3.6rem;
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
 }
 #home h3 {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   margin-bottom: 1.6rem;
+  text-transform: uppercase;
 }
 #home a {
   display: inline-block;
   color: white;
   font-size: 1.6rem;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  padding: 2rem 3.5rem;
+  letter-spacing: 2px;
+  padding: 1.5rem 2.5rem;
   border: 1px solid #ffffff;
   background: transparent;
   text-decoration: none;
@@ -178,7 +178,7 @@ header li.active {
   object-fit: contain;
 }
 #home .content {
-  margin: 0 auto;
+  margin: 2rem auto;
   grid-area: home;
   z-index: 100;
 }
@@ -187,12 +187,11 @@ header li.active {
   text-align: center;
   padding-bottom: 6.4rem;
 }
-#brands .subtitle {
-  font-size: 3rem;
-  letter-spacing: 2.5px;
+#brands .notices h2 {
+  font-size: 4.6rem;
 }
-#brands .title {
-  padding-bottom: 6.4rem;
+#brands .notices h3 {
+  font-size: 3.2rem;
 }
 #brands .notice1,
 #brands .notice2,
@@ -212,21 +211,36 @@ header li.active {
   padding-bottom: 2rem;
 }
 #brands .notice3 img {
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 12rem;
+}
+#brands p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  padding-top: 1.5rem;
+}
+#brands a {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  padding-top: 2rem;
+  color: #a6a3b4;
 }
 #brands .details {
   padding-top: 6.5rem;
 }
-#brands .details h2 {
-  font-size: 3.6rem;
+#brands .subtitle {
+  font-size: 1.8rem;
   letter-spacing: 2px;
-}
-#brands .details h3 {
-  font-size: 2.2rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
   margin-bottom: 1.5rem;
+}
+#brands .title {
+  font-size: 2.6rem;
+  letter-spacing: 1.5px;
+  padding-bottom: 6.4rem;
 }
 #brands .logos {
   width: 100%;
@@ -249,20 +263,6 @@ header li.active {
 
 #brands .logos img .blank {
   border: none;
-}
-#brands p {
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  padding-top: 1.5rem;
-}
-#brands a {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  font-weight: 300;
-  letter-spacing: 4px;
-  margin: 2rem;
-  color: #a6a3b4;
 }
 
 #about .aboutText {
@@ -293,6 +293,7 @@ header li.active {
   text-align: center;
 }
 #about .mailinglist h3 {
+  font-size: 2.8rem;
   color: #ffffff;
 }
 #about .mailinglist p {
@@ -321,6 +322,7 @@ header li.active {
   margin: 0 2rem 0 0;
 }
 #about .mailinglist .frmSubscribe label {
+  font-size: 1.4rem;
   display: block;
   color: #ffffff;
   text-transform: uppercase;
@@ -338,19 +340,19 @@ header li.active {
 #contact .location {
   max-width: 550px;
   flex-grow: 1;
-  padding: 3rem 6rem;
+  padding: 3rem 5rem;
   margin: 0 auto;
   justify-self: center;
   align-self: center;
 }
 #contact .title {
-  font-size: 4.8rem;
+  font-size: 4rem;
   letter-spacing: 1.3px;
   text-align: center;
 }
 #contact .subtitle {
-  font-size: 2.4rem;
-  letter-spacing: 1.3px;
+  font-size: 2rem;
+  letter-spacing: 1.5px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -360,8 +362,8 @@ header li.active {
   list-style-type: none;
 }
 #contact .details {
-  gap: 4rem;
   margin: 4rem 0;
+  justify-content: center;
 }
 #contact .details h3 {
   font-size: 1.6rem;
@@ -380,6 +382,9 @@ header li.active {
   letter-spacing: 1px;
   font-weight: 400;
 }
+#contact .details .address {
+  margin-right: 1.5rem;
+}
 #contact .socialmedia {
   display: flex;
   justify-content: center;
@@ -395,13 +400,13 @@ header li.active {
   flex-direction: column;
   max-width: 550px;
   margin: 0 auto;
-  padding: 3rem 6rem;
+  padding: 3rem;
   background: #e6e6e6;
 }
 #contact label {
   text-transform: uppercase;
   color: #2c2c2c;
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
   font-weight: 100;
   font-size: 1.3rem;
   padding: 2rem 0 0.8rem 0;
@@ -475,10 +480,32 @@ footer {
 }
 
 @media (min-width: 650px) {
+  #home h2 {
+    font-size: 4.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 3.6rem;
+  }
+  #home h3 {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 1.6rem;
+  }
+  #home a {
+    letter-spacing: 4px;
+    padding: 2rem 3.5rem;
+  }
   #about .aboutText h4 {
     font-size: 2.2rem;
     letter-spacing: 2px;
     padding: 3.5rem;
+  }
+  #brands .subtitle {
+    font-size: 2rem;
+    letter-spacing: 2.5px;
+  }
+  #brands .title {
+    font-size: 3.6rem;
+    letter-spacing: 2px;
   }
   #brands .logos img {
     width: 200px;
@@ -495,6 +522,9 @@ footer {
   }
   #about .aboutText img {
     display: none;
+  }
+  #contact form {
+    padding: 3rem 5rem;
   }
 }
 @media (min-width: 860px) {
